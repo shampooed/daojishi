@@ -39,7 +39,7 @@ ul li { display:inline; font-size:28px; text-align:center; font-family:'BebasNeu
 </style>
 <script type="text/javascript" src="jq.js"></script>
 <script type="text/javascript">
-var p = 0;
+var p = 0.00000000001;
 $(document).ready(function GetRTime(){
     var EndTime= new Date('2017/01/26 08:30:00');
     var NowTime = new Date();
@@ -49,11 +49,11 @@ $(document).ready(function GetRTime(){
     var h=0;
     var m=0;
     var s=0;
-    if(p<100){
+    if(p>0){
     	p=100-(NowTime.getTime()-StartTime.getTime())/(EndTime.getTime()-StartTime.getTime())*100
     	p=p.toFixed(2)
     }else{
-    	p=p;
+    	p=0;
     }
     if(t>=0){
       d=Math.floor(t/1000/60/60/24);
@@ -68,7 +68,7 @@ $(document).ready(function GetRTime(){
   	$("#percent").css("width",p+"%");
   	$("#per").html("我们还有"+p+"%的时间！")
 
-   setInterval(GetRTime,0);
+   setInterval(GetRTime,1000);
 
 });
 </script>
@@ -86,7 +86,7 @@ $(document).ready(function GetRTime(){
 </ul>
 </div>
 <div class="container">
-	<div id="percent" style="width:0%"></div>
+	<div id="percent" style="width:0%"></div><br />
 	<p id="per">0%</p>
 </div>
 
