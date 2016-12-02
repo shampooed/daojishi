@@ -12,11 +12,13 @@ body{
 	 min-width:960px;
 	 color:#bbbbbb; 
 }
-span{font-size: 200px}
-p{margin:0em;font-size: 50px;}
+p{
+	margin: 0em;
+	font-size: 50px;
+}
  
 
-.clock {width:800px; margin:0 auto; padding:30px; color:#fff; }
+.clock {width:800px;height: 400px; margin:0 auto; padding:30px; color:#fff; }
 ul { width:800px; margin:0 auto; padding:0px; list-style:none; text-align:center; }
 ul li { display:inline; font-size:28px; text-align:center; font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif; text-shadow:0 0 5px #00c6ff; }
 .container{  
@@ -35,6 +37,9 @@ ul li { display:inline; font-size:28px; text-align:center; font-family:'BebasNeu
  #per{
  	font-size: 20px;
  } 
+ #days{
+ 	font-size: 200px;
+ }
 
 </style>
 <script type="text/javascript" src="jq.js"></script>
@@ -60,17 +65,55 @@ $(document).ready(function GetRTime(){
       h=Math.floor(t/1000/60/60);
       m=Math.floor(t/1000/60);
       s=Math.floor(t/1000);
+      l=Math.floor(t/1000%60);
     }
 	$("#seconds").html("共剩：" + s+"秒");
 	$("#hours").html("共剩：" + h+"时");
 	$("#minute").html("共剩：" + m+"分");
 	$("#days").html( d+"天");
   	$("#percent").css("width",p+"%");
-  	$("#per").html("我们还有"+p+"%的时间！")
+  	$("#per").html("我们还有"+p+"%的时间！");
+  	$("#hours1").html(h+"时");
+  	$("#minute1").html(m+"分");
+  	$("#seconds1").html(s+"秒");
 
-   setTimeout(GetRTime,1000);
-
+   setTimeout(GetRTime,0);
+   if (l == 50) {
+   	document.getElementById('days').style.display = "none";
+   	document.getElementById('hours').style.display = "none";
+   	document.getElementById('minute').style.display = "none";
+   	document.getElementById('seconds').style.display = "none";
+   	document.getElementById('hours1').style.display = "";
+   	document.getElementById('minute1').style.display = "none";
+   	document.getElementById('seconds1').style.display = "none";
+   }
+   if (l == 40) {
+   	document.getElementById('days').style.display = "none";
+   	document.getElementById('hours').style.display = "none";
+   	document.getElementById('minute').style.display = "none";
+   	document.getElementById('seconds').style.display = "none";
+   	document.getElementById('hours1').style.display = "none";
+   	document.getElementById('minute1').style.display = "";
+   	document.getElementById('seconds1').style.display = "none";   }
+   if (l == 30) {
+   	document.getElementById('days').style.display = "none";
+   	document.getElementById('hours').style.display = "none";
+   	document.getElementById('minute').style.display = "none";
+   	document.getElementById('seconds').style.display = "none";
+   	document.getElementById('hours1').style.display = "none";
+   	document.getElementById('minute1').style.display = "none";
+   	document.getElementById('seconds1').style.display = "";   }
+   if (l == 20) {
+   	document.getElementById('days').style.display = "";
+   	document.getElementById('hours').style.display = "";
+   	document.getElementById('minute').style.display = "";
+   	document.getElementById('seconds').style.display = "";
+   	document.getElementById('hours1').style.display = "none";
+   	document.getElementById('minute1').style.display = "none";
+   	document.getElementById('seconds1').style.display = "none";
+   	}
 });
+
 </script>
 </head>
 <body>
@@ -79,10 +122,13 @@ $(document).ready(function GetRTime(){
 
 <ul>
 <p>距离项目结束还有</p>
-<span id="days"></span><br />
+<li id="days"></li><br />
 <li id="hours"> </li><br />
 <li id="minute"> </li><br />
 <li id="seconds"> </li>
+<li id="hours1" style="display: none;font-size: 200px"></li>
+<li id="minute1" style="display: none;font-size: 200px"></li>
+<li id="seconds1" style="display: none;font-size: 200px"></li>
 </ul>
 </div>
 <div class="container">
@@ -94,4 +140,3 @@ $(document).ready(function GetRTime(){
 
 </body>
 </html>
-
