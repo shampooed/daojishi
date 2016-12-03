@@ -5,7 +5,8 @@
 <style type="text/css">
 
 body{
-	 background:#202020;
+	 background-image:url(1.jpg);
+	 background-size: cover;
 	 font:bold 12px Arial, Helvetica, sans-serif;
 	 margin:0;
 	 padding:0;
@@ -36,6 +37,7 @@ ul li { display:inline; font-size:28px; text-align:center; font-family:'BebasNeu
  } 
  #per{
  	font-size: 20px;
+ 	margin: 0 auto;
  } 
  #days{
  	font-size: 200px;
@@ -86,6 +88,7 @@ $(document).ready(function GetRTime(){
    	document.getElementById('hours1').style.display = "";
    	document.getElementById('minute1').style.display = "none";
    	document.getElementById('seconds1').style.display = "none";
+   	document.body.style.backgroundImage= "url(2.jpg)";
    }
    if (l == 40) {
    	document.getElementById('days').style.display = "none";
@@ -94,7 +97,9 @@ $(document).ready(function GetRTime(){
    	document.getElementById('seconds').style.display = "none";
    	document.getElementById('hours1').style.display = "none";
    	document.getElementById('minute1').style.display = "";
-   	document.getElementById('seconds1').style.display = "none";   }
+   	document.getElementById('seconds1').style.display = "none";   
+   	document.body.style.backgroundImage = "url(3.jpg)";
+   }
    if (l == 30) {
    	document.getElementById('days').style.display = "none";
    	document.getElementById('hours').style.display = "none";
@@ -102,7 +107,9 @@ $(document).ready(function GetRTime(){
    	document.getElementById('seconds').style.display = "none";
    	document.getElementById('hours1').style.display = "none";
    	document.getElementById('minute1').style.display = "none";
-   	document.getElementById('seconds1').style.display = "";   }
+   	document.getElementById('seconds1').style.display = "";
+   	document.body.style.backgroundImage = "url(4.jpg)";
+   }
    if (l == 20) {
    	document.getElementById('days').style.display = "";
    	document.getElementById('hours').style.display = "";
@@ -111,6 +118,7 @@ $(document).ready(function GetRTime(){
    	document.getElementById('hours1').style.display = "none";
    	document.getElementById('minute1').style.display = "none";
    	document.getElementById('seconds1').style.display = "none";
+   	document.body.style.backgroundImage = "green";
    	}
 });
 
@@ -126,13 +134,15 @@ $(document).ready(function GetRTime(){
 <li id="hours"> </li><br />
 <li id="minute"> </li><br />
 <li id="seconds"> </li>
-<li id="hours1" style="display: none;font-size: 200px"></li>
-<li id="minute1" style="display: none;font-size: 200px"></li>
-<li id="seconds1" style="display: none;font-size: 200px"></li>
+<li id="hours1" style="display: none;font-size: 150px"></li>
+<li id="minute1" style="display: none;font-size: 150px"></li>
+<li id="seconds1" style="display: none;font-size: 150px"></li>
 </ul>
 </div>
 <div class="container">
 	<div id="percent" style="width:0%"></div><br />
+</div>
+<div style="margin: 0 auto;   text-align:center;  ">
 	<p id="per">0%</p>
 </div>
 
@@ -140,3 +150,4 @@ $(document).ready(function GetRTime(){
 
 </body>
 </html>
+
