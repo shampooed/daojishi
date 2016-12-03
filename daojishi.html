@@ -69,18 +69,18 @@ $(document).ready(function GetRTime(){
       s=Math.floor(t/1000);
       l=Math.floor(t/1000%60);
     }
-	$("#seconds").html("共剩：" + s+"秒");
-	$("#hours").html("共剩：" + h+"时");
-	$("#minute").html("共剩：" + m+"分");
-	$("#days").html( d+"天");
+	  $("#seconds").html("共剩：" + s+"秒");
+	  $("#hours").html("共剩：" + h+"时");
+	  $("#minute").html("共剩：" + m+"分");
+	  $("#days").html( d+"天");
   	$("#percent").css("width",p+"%");
   	$("#per").html("我们还有"+p+"%的时间！");
   	$("#hours1").html(h+"时");
   	$("#minute1").html(m+"分");
   	$("#seconds1").html(s+"秒");
-
    setTimeout(GetRTime,0);
-   if (l == 50) {
+   if (l == 45) {
+    $('body').fadeIn(7000);
    	document.getElementById('days').style.display = "none";
    	document.getElementById('hours').style.display = "none";
    	document.getElementById('minute').style.display = "none";
@@ -89,8 +89,10 @@ $(document).ready(function GetRTime(){
    	document.getElementById('minute1').style.display = "none";
    	document.getElementById('seconds1').style.display = "none";
    	document.body.style.backgroundImage= "url(2.jpg)";
+    $('body').fadeOut(8000);
    }
-   if (l == 40) {
+   if (l == 30) {
+    $('body').fadeIn(7000);
    	document.getElementById('days').style.display = "none";
    	document.getElementById('hours').style.display = "none";
    	document.getElementById('minute').style.display = "none";
@@ -99,8 +101,10 @@ $(document).ready(function GetRTime(){
    	document.getElementById('minute1').style.display = "";
    	document.getElementById('seconds1').style.display = "none";   
    	document.body.style.backgroundImage = "url(3.jpg)";
+    $('body').fadeOut(8000);
    }
-   if (l == 30) {
+   if (l == 15) {
+    $('body').fadeIn(7000);
    	document.getElementById('days').style.display = "none";
    	document.getElementById('hours').style.display = "none";
    	document.getElementById('minute').style.display = "none";
@@ -109,8 +113,10 @@ $(document).ready(function GetRTime(){
    	document.getElementById('minute1').style.display = "none";
    	document.getElementById('seconds1').style.display = "";
    	document.body.style.backgroundImage = "url(4.jpg)";
+    $('body').fadeOut(8000);
    }
-   if (l == 20) {
+   if (l == 0) {
+    $('body').fadeIn(7000);    
    	document.getElementById('days').style.display = "";
    	document.getElementById('hours').style.display = "";
    	document.getElementById('minute').style.display = "";
@@ -119,6 +125,7 @@ $(document).ready(function GetRTime(){
    	document.getElementById('minute1').style.display = "none";
    	document.getElementById('seconds1').style.display = "none";
    	document.body.style.backgroundImage = "url(5.jpg)";
+    $('body').fadeOut(8000);
    	}
 });
 
