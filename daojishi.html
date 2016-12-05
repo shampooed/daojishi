@@ -47,6 +47,7 @@ ul li { display:inline; font-size:28px; text-align:center; font-family:'BebasNeu
 <script type="text/javascript" src="jq.js"></script>
 <script type="text/javascript">
 var p = 0.00000000001;
+
 $(document).ready(function GetRTime(){
     var EndTime= new Date('2017/01/26 08:30:00');
     var NowTime = new Date();
@@ -69,18 +70,20 @@ $(document).ready(function GetRTime(){
       s=Math.floor(t/1000);
       l=Math.floor(t/1000%60);
     }
-	$("#seconds").html("共剩：" + s+"秒");
-	$("#hours").html("共剩：" + h+"时");
-	$("#minute").html("共剩：" + m+"分");
-	$("#days").html( d+"天");
+	  $("#seconds").html("共剩：" + s+"秒");
+	  $("#hours").html("共剩：" + h+"时");
+	  $("#minute").html("共剩：" + m+"分");
+	  $("#days").html( d+"天");
   	$("#percent").css("width",p+"%");
   	$("#per").html("我们还有"+p+"%的时间！");
   	$("#hours1").html(h+"时");
   	$("#minute1").html(m+"分");
   	$("#seconds1").html(s+"秒");
-
    setTimeout(GetRTime,0);
-   if (l == 50) {
+   if (l == 45) {
+    $('body').fadeOut(0);
+    $('body').fadeIn(7000);
+    $('body').fadeOut(8000);
    	document.getElementById('days').style.display = "none";
    	document.getElementById('hours').style.display = "none";
    	document.getElementById('minute').style.display = "none";
@@ -90,7 +93,10 @@ $(document).ready(function GetRTime(){
    	document.getElementById('seconds1').style.display = "none";
    	document.body.style.backgroundImage= "url(2.jpg)";
    }
-   if (l == 40) {
+   if (l == 30) {
+    $('body').fadeOut(0);
+    $('body').fadeIn(7000);
+    $('body').fadeOut(8000);
    	document.getElementById('days').style.display = "none";
    	document.getElementById('hours').style.display = "none";
    	document.getElementById('minute').style.display = "none";
@@ -100,7 +106,10 @@ $(document).ready(function GetRTime(){
    	document.getElementById('seconds1').style.display = "none";   
    	document.body.style.backgroundImage = "url(3.jpg)";
    }
-   if (l == 30) {
+   if (l == 15) {
+    $('body').fadeOut(0);
+    $('body').fadeIn(7000);
+    $('body').fadeOut(8000);
    	document.getElementById('days').style.display = "none";
    	document.getElementById('hours').style.display = "none";
    	document.getElementById('minute').style.display = "none";
@@ -110,7 +119,10 @@ $(document).ready(function GetRTime(){
    	document.getElementById('seconds1').style.display = "";
    	document.body.style.backgroundImage = "url(4.jpg)";
    }
-   if (l == 20) {
+   if (l == 0) {
+    $('body').fadeOut(0);
+    $('body').fadeIn(7000); 
+    $('body').fadeOut(8000);
    	document.getElementById('days').style.display = "";
    	document.getElementById('hours').style.display = "";
    	document.getElementById('minute').style.display = "";
@@ -150,4 +162,5 @@ $(document).ready(function GetRTime(){
 
 </body>
 </html>
+
 
