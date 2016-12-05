@@ -9,9 +9,10 @@ body{
 	 background-size: cover;
 	 font:bold 12px Arial, Helvetica, sans-serif;
 	 margin:0 auto;
+   margin-left: 0%;
 	 padding:0;
-   	 width: 800px;
-   	 height: 510px;
+   width: 700px;
+   height: 510px;
 	 color:#bbbbbb; 
 }
 p{
@@ -20,8 +21,8 @@ p{
 }
  
 
-.clock {width:800px;height: 400px; margin:0 auto; padding:30px; color:#fff; }
-ul { width:800px; margin:0 auto; padding:0px; list-style:none; text-align:center; }
+.clock {width:700px;height: 400px; margin:0 auto; padding:30px; color:#fff; }
+ul { width:700px; margin:0 auto; padding:0px; list-style:none; text-align:center; }
 ul li { display:inline; font-size:28px; text-align:center; font-family:'BebasNeueRegular', Arial, Helvetica, sans-serif; text-shadow:0 0 5px #00c6ff; }
 .container{  
    width:500px;  
@@ -99,8 +100,8 @@ $(document).ready(function GetRTime(){
    	document.getElementById('hours1').style.display = "";
    	document.getElementById('minute1').style.display = "none";
    	document.getElementById('seconds1').style.display = "none";
-    	document.body.style.marginLeft = Math.ceil(Math.random()*20)+'%'
-  	document.body.style.backgroundImage= "url(2.jpg)";
+    document.body.style.marginLeft = Math.ceil(Math.random()*20)+'%'
+   	document.body.style.backgroundImage= "url(2.jpg)";
    }
    if (l == 30) {
     $('body').fadeOut(0);
@@ -113,8 +114,8 @@ $(document).ready(function GetRTime(){
    	document.getElementById('hours1').style.display = "none";
    	document.getElementById('minute1').style.display = "";
    	document.getElementById('seconds1').style.display = "none"; 
-   	document.body.style.marginLeft = Math.ceil(Math.random()*20)+'%'
-  	document.body.style.backgroundImage = "url(3.jpg)";
+    document.body.style.marginLeft = Math.ceil(Math.random()*20)+'%'
+   	document.body.style.backgroundImage = "url(3.jpg)";
    }
    if (l == 15) {
     $('body').fadeOut(0);
@@ -127,7 +128,7 @@ $(document).ready(function GetRTime(){
    	document.getElementById('hours1').style.display = "none";
    	document.getElementById('minute1').style.display = "none";
    	document.getElementById('seconds1').style.display = "";
-    	document.body.style.marginLeft = Math.ceil(Math.random()*20)+'%'
+    document.body.style.marginLeft = Math.ceil(Math.random()*20)+'%'
    	document.body.style.backgroundImage = "url(4.jpg)";
    }
    if (l == 0) {
@@ -141,15 +142,15 @@ $(document).ready(function GetRTime(){
    	document.getElementById('hours1').style.display = "none";
    	document.getElementById('minute1').style.display = "none";
    	document.getElementById('seconds1').style.display = "none";
-    	document.body.style.marginLeft = Math.ceil(Math.random()*20)+'%'
-  	document.body.style.backgroundImage = "url(5.jpg)";
+    document.body.style.marginLeft = Math.ceil(Math.random()*20)+'%'
+   	document.body.style.backgroundImage = "url(5.jpg)";
    	}
 });
 
 </script>
 </head>
 <body>
-
+<div style="width: 700px;height: 510px;margin: 0 auto;">
 <div class="clock">
 
 <ul>
@@ -160,7 +161,7 @@ $(document).ready(function GetRTime(){
 <li id="seconds"> </li>
 <li id="hours1" style="display: none;font-size: 150px"></li>
 <li id="minute1" style="display: none;font-size: 150px"></li>
-<li id="seconds1" style="display: none;font-size: 150px"></li>
+<li id="seconds1" style="display: none;font-size: 100px"></li>
 </ul>
 </div>
 <div class="container">
@@ -169,9 +170,10 @@ $(document).ready(function GetRTime(){
 <div style="margin: 0 auto;   text-align:center;  ">
 	<p id="per">0%</p>
 </div>
-
+</div>
 
 
 </body>
 </html>
+
 
