@@ -138,7 +138,7 @@ $(function(){
         }
     }
 	function heightUp(){
-        l=l+0.5;    
+        l=l+0.25;    
         if(l > h){
             setTimeout(heightDown,50);
         }else {
@@ -148,7 +148,7 @@ $(function(){
     }
 
     function heightDown(){
-        l=l-0.5;    
+        l=l-0.25;    
         if(l < 30) {
             setTimeout(heightUp,50);
         }else{
