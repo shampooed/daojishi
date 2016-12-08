@@ -119,41 +119,41 @@ $(function(){
     var h = 0;
     h = innerHeight-310;
     function widthUp(){
-        i=i+1;    
+        i=i+0.5;    
         if(i > w){
-            setTimeout(widthDown,100);
+            setTimeout(widthDown,50);
         }else {
             $("#main").css("marginLeft",i+"px");
-            setTimeout(widthUp,100);
+            setTimeout(widthUp,50);
         }
     }
 
     function widthDown(){
-        i=i-1;    
+        i=i-0.5;    
         if(i < 0) {
-            setTimeout(widthUp,100);
+            setTimeout(widthUp,50);
         }else{
             $("#main").css("marginLeft",i+"px");
-            setTimeout(widthDown,100);
+            setTimeout(widthDown,50);
         }
     }
 	function heightUp(){
-        l=l+0.5;    
+        l=l+0.25;    
         if(l > h){
-            setTimeout(heightDown,100);
+            setTimeout(heightDown,50);
         }else {
             $("#main").css("marginTop",l+"px");
-            setTimeout(heightUp,100);
+            setTimeout(heightUp,50);
         }
     }
 
     function heightDown(){
-        l=l-0.5;    
+        l=l-0.25;    
         if(l < 30) {
-            setTimeout(heightUp,100);
+            setTimeout(heightUp,50);
         }else{
             $("#main").css("marginTop",l+"px");
-            setTimeout(heightDown,100);
+            setTimeout(heightDown,50);
         }
 	} 
 	heightUp(); 
