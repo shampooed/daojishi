@@ -67,12 +67,12 @@ $(document).ready(function GetRTime(){
   	$("#minute1").html(m+"分");
   	$("#seconds1").html(s+"秒");
    setTimeout(GetRTime,1000);
-   function show(){
-    $('body').fadeIn(1000);
-   }
-   function hide(){
-    $('body').fadeOut(1000);
-   }
+   // function show(){
+   //  $('body').fadeIn(1000);
+   // }
+   // function hide(){
+   //  $('body').fadeOut(1000);
+   // }
 
    if (l == 30) {
     // $('body').fadeOut(0);
@@ -138,7 +138,7 @@ $(function(){
         }
     }
 	function heightUp(){
-        l=l+1;    
+        l=l+0.5;    
         if(l > h){
             setTimeout(heightDown,100);
         }else {
@@ -148,7 +148,7 @@ $(function(){
     }
 
     function heightDown(){
-        l=l-1;    
+        l=l-0.5;    
         if(l < 30) {
             setTimeout(heightUp,100);
         }else{
