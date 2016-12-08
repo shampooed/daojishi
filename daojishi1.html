@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>项目倒计时</title>
+<style type="text/css">
+	body{
+		background-color: black;
+		color: white;
+		font:bold 12px Arial, Helvetica, sans-serif;
+		width: 100%;
+		height: 100%;
+	}
+.container{  
+   width:450px;  
+   height:25px;
+   margin: 0 auto;
+   float: left; 
+   border: 1px solid white;
+ }
+#percent{  
+   background:white;  
+   float:left; 
+   height:100%;  
+   text-align:center;  
+   line-height:150%; 
+ } 
+ #per{
+ 	font-size: 20px;
+ 	margin: 0 auto;
+ } 
+ #days{
+ 	font-size: 150px;
+ }
+ li{
+ 	text-align: center;
+ }
+</style>
+<script type="text/javascript" src="jq.js"></script>
+<script type="text/javascript">
+var p = 0.00000000001;
+$(document).ready(function GetRTime(){
+    var EndTime= new Date('2017/01/26 08:30:00');
+    var NowTime = new Date();
+    var StartTime = new Date('2016/12/01 08:30:00')
+    var t =EndTime.getTime() - NowTime.getTime();
+    var d=0;
+    var h=0;
+    var m=0;
+    var s=0;
+    if(p>0){
+    	p=100-(NowTime.getTime()-StartTime.getTime())/(EndTime.getTime()-StartTime.getTime())*100
+    	p=p.toFixed(2)
+    }else{
+    	p=0;
+    }
+    if(t>=0){
+      d=Math.floor(t/1000/60/60/24);
+      h=Math.floor(t/1000/60/60);
+      m=Math.floor(t/1000/60);
+      s=Math.floor(t/1000);
+      l=Math.floor(t/1000%60);
+    }
+	$("#days").html( d+"天");
+  	$("#percent").css("width",p+"%");
+  	$("#per").html("我们还有"+p+"%的时间！");
+  	$("#hours1").html(h+"时");
+  	$("#minute1").html(m+"分");
+  	$("#seconds1").html(s+"秒");
+   setTimeout(GetRTime,1000);
+   function show(){
+    $('body').fadeIn(1000);
+   }
+   function hide(){
+    $('body').fadeOut(1000);
+   }
+
+   if (l == 45) {
+    // $('body').fadeOut(0);
+    // setTimeout(show,4000);
+    // setTimeout(hide,11000);
+   	document.getElementById('days').style.display = "none";
+   	document.getElementById('hours1').style.display = "";
+   	document.getElementById('minute1').style.display = "none";
+   	document.getElementById('seconds1').style.display = "none";
+   }
+   if (l == 30) {
+    // $('body').fadeOut(0);
+    // setTimeout(show,4000);
+    // setTimeout(hide,11000);
+   	document.getElementById('days').style.display = "none";
+   	document.getElementById('hours1').style.display = "none";
+   	document.getElementById('minute1').style.display = "";
+   	document.getElementById('seconds1').style.display = "none"; 
+   }
+   if (l == 15) {
+    // $('body').fadeOut(0);
+    // setTimeout(show,4000);
+    // setTimeout(hide,11000);
+   	document.getElementById('days').style.display = "none";
+   	document.getElementById('hours1').style.display = "none";
+   	document.getElementById('minute1').style.display = "none";
+   	document.getElementById('seconds1').style.display = "";
+   }
+   if (l == 0) {
+    // $('body').fadeOut(0);
+    // setTimeout(show,4000);
+    // setTimeout(hide,11000);
+   	document.getElementById('days').style.display = "";
+   	document.getElementById('hours1').style.display = "none";
+   	document.getElementById('minute1').style.display = "none";
+   	document.getElementById('seconds1').style.display = "none";
+   	}
+});
+$(function(){
+    var i = 0;
+    var w = 0;
+    var l = 30;
+    w = innerWidth-460;
+    var h = 0;
+    h = innerHeight-310;
+    function widthUp(){
+        i=i+1;    
+        if(i > w){
+            setTimeout(widthDown,100);
+        }else {
+            $("#main").css("marginLeft",i+"px");
+            setTimeout(widthUp,100);
+        }
+    }
+
+    function widthDown(){
+        i=i-1;    
+        if(i < 0) {
+            setTimeout(widthUp,100);
+        }else{
+            $("#main").css("marginLeft",i+"px");
+            setTimeout(widthDown,100);
+        }
+    }
+	function heightUp(){
+        l=l+1;    
+        if(l > h){
+            setTimeout(heightDown,100);
+        }else {
+            $("#main").css("marginTop",l+"px");
+            setTimeout(heightUp,100);
+        }
+    }
+
+    function heightDown(){
+        l=l-1;    
+        if(l < 30) {
+            setTimeout(heightUp,100);
+        }else{
+            $("#main").css("marginTop",l+"px");
+            setTimeout(heightDown,100);
+        }
+	} 
+	heightUp(); 
+    widthUp();
+});
+</script>
+</head>
+<body>
+<div  id="main" style="width: 450px;height: 300px;">
+	<div style="width: 450px;height: 250px;">
+<ul style="list-style:none;">
+<p style="font-size: 30px;height: 30px;text-align: center;">距离项目结束还有</p>
+<li id="days"></li><br />
+<li id="hours1" style="display: none;font-size: 100px"></li>
+<li id="minute1" style="display: none;font-size: 100px"></li>
+<li id="seconds1" style="display: none;font-size: 80px"></li>
+</ul>
+</div>
+<div class="container">
+	<div id="percent" style="width:0%"></div><br />
+</div>
+<div style="margin: 0 auto;   text-align:center; float: left; text-align: center;">
+	<p id="per">0%</p>	</div>
+</div>
+</body>
+<script type="text/javascript">
+</script>
+</html>
